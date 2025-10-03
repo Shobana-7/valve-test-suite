@@ -1,0 +1,39 @@
+{
+  "name": "valve-test-suite",
+  "version": "1.0.0",
+  "description": "Valve Test Suite - Web Application for Pressure Safety Valve Testing",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "init-db": "node server/scripts/initDatabase.js",
+    "client": "cd client && npm run dev",
+    "server": "nodemon server/server.js",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "keywords": [
+    "valve",
+    "testing",
+    "psv",
+    "pressure-safety-valve"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "exceljs": "^4.4.0",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "mysql2": "^3.15.1",
+    "pdfkit": "^0.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
