@@ -1,262 +1,178 @@
-# Valve Test Suite - Web Application
+# 🔧 Valve Test Suite
 
-A comprehensive web application for managing Pressure Safety Valve (PSV) testing, built with React.js, Node.js, Express, and MySQL.
+A comprehensive web application for managing Pressure Safety Valve (PSV) testing and reporting.
 
-## 🚀 Features
+![Valve Test Suite](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
+![React](https://img.shields.io/badge/React-18+-blue)
+![Node.js](https://img.shields.io/badge/Node.js-18+-green)
+![MySQL](https://img.shields.io/badge/Database-MySQL-orange)
 
-### User Roles
-- **Operator**: Create and manage test reports
-- **Supervisor**: Review and approve/reject test reports
-- **Admin**: Full system access including user management
+## 🌟 **Live Demo**
 
-### Core Functionality
-- ✅ User authentication with JWT
-- ✅ Role-based access control
-- ✅ Create, view, edit, and delete test reports
-- ✅ Approve/reject reports (Admin/Supervisor)
-- ✅ Dashboard with statistics
-- ✅ User management (Admin only)
-- ✅ Responsive design
-- ✅ Professional UI/UX
+**🚀 Application URL:** [https://yourusername.github.io/valve-test-suite](https://yourusername.github.io/valve-test-suite)
 
-## 📋 Prerequisites
+**🧪 Test Credentials:**
+- **Operator:** `operator1` / `operator123`
+- **Admin:** `admin1` / `admin123`
+- **Supervisor:** `supervisor1` / `supervisor123`
 
-- Node.js (v14 or higher)
-- MySQL (v5.7 or higher)
-- npm or yarn
+## ✨ **Features**
 
-## 🛠️ Installation
-
-### 1. Clone the repository
-```bash
-cd c:\Users\User\Desktop\Project-Web\30-9
-```
-
-### 2. Install dependencies
-
-#### Backend
-```bash
-npm install
-```
-
-#### Frontend
-```bash
-cd client
-npm install
-cd ..
-```
-
-### 3. Database Setup
-
-#### Option A: Using MySQL Workbench or Command Line
-1. Open MySQL and create a database:
-```sql
-CREATE DATABASE valve_test_suite;
-```
-
-2. Run the initialization script:
-```bash
-npm run init-db
-```
-
-#### Option B: Manual Setup
-1. Import the SQL file located at `server/config/database.sql`
-2. Update the `.env` file with your database credentials
-
-### 4. Configure Environment Variables
-
-Create a `.env` file in the `server` directory (or use the existing one):
-
-```env
-# Server Configuration
-PORT=5000
-NODE_ENV=development
-
-# Database Configuration
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your_mysql_password
-DB_NAME=valve_test_suite
-DB_PORT=3306
-
-# JWT Configuration
-JWT_SECRET=valve_test_suite_secret_key_2025_change_in_production
-JWT_EXPIRES_IN=7d
-
-# CORS Configuration
-CLIENT_URL=http://localhost:5173
-```
-
-**Important**: Update `DB_PASSWORD` with your MySQL root password!
-
-## 🚀 Running the Application
-
-### Development Mode
-
-#### Start Backend Server
-```bash
-npm run dev
-```
-The backend will run on `http://localhost:5000`
-
-#### Start Frontend (in a new terminal)
-```bash
-npm run client
-```
-The frontend will run on `http://localhost:5173`
-
-### Production Mode
-
-#### Build Frontend
-```bash
-npm run build
-```
-
-#### Start Backend
-```bash
-npm start
-```
-
-## 👤 Default User Credentials
-
-After running the database initialization, you can login with:
-
-| Role | Username | Password |
-|------|----------|----------|
-| Admin | admin | admin123 |
-| Operator | operator1 | operator123 |
-| Supervisor | supervisor1 | supervisor123 |
-
-## 📁 Project Structure
-
-```
-valve-test-suite/
-├── server/                 # Backend (Node.js + Express)
-│   ├── config/            # Database configuration
-│   ├── middleware/        # Authentication middleware
-│   ├── routes/            # API routes
-│   ├── scripts/           # Database initialization scripts
-│   └── server.js          # Main server file
-├── client/                # Frontend (React.js)
-│   ├── src/
-│   │   ├── components/    # Reusable components
-│   │   ├── context/       # React context (Auth)
-│   │   ├── pages/         # Page components
-│   │   ├── services/      # API services
-│   │   ├── App.jsx        # Main App component
-│   │   └── main.jsx       # Entry point
-│   ├── index.html
-│   └── vite.config.js     # Vite configuration
-├── package.json
-└── README.md
-```
-
-## 🔌 API Endpoints
-
-### Authentication
-- `POST /api/auth/login` - User login
-- `GET /api/auth/me` - Get current user
-- `POST /api/auth/logout` - User logout
-
-### Users (Admin only)
-- `GET /api/users` - Get all users
-- `GET /api/users/:id` - Get user by ID
-- `POST /api/users` - Create new user
-- `PUT /api/users/:id` - Update user
-- `DELETE /api/users/:id` - Delete user
-
-### Reports
-- `GET /api/reports` - Get all reports (filtered by role)
-- `GET /api/reports/:id` - Get report by ID
-- `POST /api/reports` - Create new report
-- `PUT /api/reports/:id` - Update report
-- `DELETE /api/reports/:id` - Delete report
-- `PATCH /api/reports/:id/status` - Approve/reject report
-- `GET /api/reports/stats/dashboard` - Get dashboard statistics
-
-## 🎨 Technologies Used
-
-### Frontend
-- React.js 18
-- React Router DOM
-- Axios
-- Vite
-- CSS3
-
-### Backend
-- Node.js
-- Express.js
-- MySQL2
-- JWT (jsonwebtoken)
-- bcryptjs
-- CORS
-
-## 🔒 Security Features
-
-- Password hashing with bcrypt
-- JWT-based authentication
+### 🔐 **Authentication & Authorization**
+- Multi-role user system (Admin, Operator, Supervisor)
+- JWT-based secure authentication
 - Role-based access control
-- Protected API routes
-- SQL injection prevention with parameterized queries
 
-## 📱 Responsive Design
+### 📋 **POP Test Report Management**
+- Create comprehensive POP (Proof of Performance) test reports
+- Auto-increment reference numbers (KSE-DDMMYY-XX format)
+- Step-by-step guided form with validation
+- Auto-fill functionality for valve data
 
-The application is fully responsive and works on:
-- Desktop computers
-- Tablets
-- Mobile devices
+### 🗂️ **Master Data Management**
+- Brands, models, materials, IO sizes
+- Set pressures and valve serial management
+- Dynamic dropdowns with add-new functionality
 
-## 🐛 Troubleshooting
+### 📊 **Dashboard & Navigation**
+- Role-specific dashboards
+- Multiple navigation options (4 different ways to return to dashboard)
+- Responsive design for all devices
+- Floating dashboard button for easy access
 
-### Database Connection Issues
-1. Ensure MySQL is running
-2. Check database credentials in `.env`
-3. Verify database exists: `SHOW DATABASES;`
+### 📱 **Modern UI/UX**
+- Mobile-responsive design
+- Professional interface
+- Breadcrumb navigation
+- Real-time form validation
 
-### Port Already in Use
-- Backend: Change `PORT` in `.env`
-- Frontend: Change port in `client/vite.config.js`
+## 🏗️ **Technology Stack**
 
-### Module Not Found Errors
-```bash
-# Reinstall dependencies
-npm install
-cd client && npm install
-```
+### **Frontend**
+- **React 18+** with modern hooks
+- **Vite** for fast development and building
+- **React Router** for navigation
+- **Axios** for API communication
+- **Custom CSS** with CSS variables
 
-## 📝 License
+### **Backend**
+- **Node.js** with Express framework
+- **MySQL** database with AWS RDS
+- **JWT** authentication
+- **bcryptjs** for password hashing
+- **CORS** enabled for cross-origin requests
 
-ISC
+### **Deployment**
+- **Frontend:** GitHub Pages with GitHub Actions
+- **Backend:** Railway (production-grade hosting)
+- **Database:** AWS RDS MySQL (production database)
+- **SSL/HTTPS:** Enabled on all endpoints
 
-## 👨‍💻 Development
+## 🚀 **Getting Started**
 
-### Adding New Features
-1. Backend: Add routes in `server/routes/`
-2. Frontend: Add pages in `client/src/pages/`
-3. Update API service in `client/src/services/api.js`
+### **Prerequisites**
+- Node.js (v18 or higher)
+- npm or yarn package manager
+- Git
 
-### Database Migrations
-Modify `server/config/database.sql` and re-run:
-```bash
-npm run init-db
-```
+### **Local Development**
 
-## 🤝 Support
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/valve-test-suite.git
+   cd valve-test-suite
+   ```
 
-For issues or questions, please check the troubleshooting section or review the code comments.
+2. **Install dependencies:**
+   ```bash
+   # Root dependencies
+   npm install
 
-## 🎯 Future Enhancements
+   # Frontend dependencies
+   cd client && npm install && cd ..
+   ```
 
-- PDF report generation
-- Excel export functionality
-- Email notifications
-- Advanced search and filtering
-- Report templates
-- Audit logging
-- File attachments for reports
-- Multi-language support
+3. **Environment setup:**
+   ```bash
+   # Copy environment template
+   cp .env.example .env
+
+   # Edit .env with your database credentials
+   ```
+
+4. **Start development servers:**
+   ```bash
+   # Backend (Terminal 1)
+   npm run dev
+
+   # Frontend (Terminal 2)
+   npm run client
+   ```
+
+5. **Access the application:**
+   - Frontend: http://localhost:5173
+   - Backend API: http://localhost:5000
+
+## 🧪 **Testing**
+
+### **Test Users**
+| Role | Username | Password | Permissions |
+|------|----------|----------|-------------|
+| Admin | admin1 | admin123 | Full access, user management |
+| Operator | operator1 | operator123 | Create/view reports |
+| Supervisor | supervisor1 | supervisor123 | View all reports, limited admin |
+
+### **Test Scenarios**
+1. **Login & Dashboard Navigation**
+2. **Create POP Test Report** with auto-fill features
+3. **Report Management** (view, delete)
+4. **Master Data Management**
+5. **Mobile Responsive Testing**
+
+## 🚀 **Deployment**
+
+### **Automatic Deployment**
+- **Frontend:** Automatically deployed to GitHub Pages on push to main branch
+- **Backend:** Automatically deployed to Railway on push to main branch
+- **Database:** AWS RDS MySQL (always online)
+
+### **Manual Deployment**
+See `GITHUB_DEPLOYMENT_GUIDE.md` for detailed deployment instructions.
+
+## 🔒 **Security Features**
+
+- ✅ **JWT Authentication** with secure token handling
+- ✅ **Password Hashing** with bcryptjs
+- ✅ **HTTPS/SSL** on all production endpoints
+- ✅ **CORS Configuration** for secure cross-origin requests
+- ✅ **Environment Variables** for sensitive data
+- ✅ **Input Validation** on all forms
+- ✅ **SQL Injection Protection** with parameterized queries
+
+## 📊 **Performance**
+
+- ✅ **Fast Loading** with Vite build optimization
+- ✅ **Code Splitting** for efficient bundle sizes
+- ✅ **CDN Delivery** via GitHub Pages
+- ✅ **Database Optimization** with indexed queries
+- ✅ **Responsive Design** for all device sizes
+
+## 🤝 **Contributing**
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+## 📄 **License**
+
+This project is licensed under the ISC License.
+
+## 📞 **Support**
+
+For support, create an issue in this repository.
 
 ---
 
-**Built with ❤️ for Valve Testing Professionals**
-
+**Built with ❤️ for professional valve testing management**

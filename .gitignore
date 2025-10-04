@@ -34,3 +34,13 @@ coverage/
 build/
 dist/
 
+# Railway specific
+.railway/
+
+# Deployment specific
+*ngrok*
+test-*.js
+debug-*.js
+*.sql
+*.backup
+
