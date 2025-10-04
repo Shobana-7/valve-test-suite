@@ -9,8 +9,8 @@
     "init-db": "node server/scripts/initDatabase.js",
     "client": "cd client && npm run dev",
     "server": "nodemon server/server.js",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "build": "cd client && npm run build"
+
   },
   "keywords": [
     "valve",

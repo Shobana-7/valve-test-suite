@@ -9,7 +9,7 @@ A comprehensive web application for managing Pressure Safety Valve (PSV) testing
 
 ## 🌟 **Live Demo**
 
-**🚀 Application URL:** [https://yourusername.github.io/valve-test-suite](https://yourusername.github.io/valve-test-suite)
+**🚀 Application URL:** [https://shobana-7.github.io/valve-test-suite](https://shobana-7.github.io/valve-test-suite)
 
 **🧪 Test Credentials:**
 - **Operator:** `operator1` / `operator123`
@@ -79,7 +79,7 @@ A comprehensive web application for managing Pressure Safety Valve (PSV) testing
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/valve-test-suite.git
+   git clone https://github.com/Shobana-7/valve-test-suite.git
    cd valve-test-suite
    ```
 

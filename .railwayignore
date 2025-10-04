@@ -1,0 +1,12 @@
+# Railway ignore file - exclude frontend from backend deployment
+client/
+*.md
+.git/
+.github/
+.gitignore
+.env.example
+DEPLOYMENT_GUIDE.md
+GITHUB_DEPLOYMENT_GUIDE.md
+HEROKU_DEPLOYMENT_GUIDE.md
+CLIENT_TESTING_DEPLOYMENT_SUMMARY.md
+Procfile
