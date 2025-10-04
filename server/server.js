@@ -64,8 +64,24 @@ if (process.env.NODE_ENV === 'production') {
     if (req.path.startsWith('/api')) {
       return next();
     }
-    // For all other routes, serve the React app
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+
+    // In production, redirect to GitHub Pages frontend
+    if (process.env.NODE_ENV === 'production') {
+      return res.redirect('https://shobana-7.github.io/valve-test-suite');
+    }
+
+    // For development, try to serve the React app
+    const indexPath = path.join(__dirname, '../client/dist/index.html');
+    if (require('fs').existsSync(indexPath)) {
+      res.sendFile(indexPath);
+    } else {
+      res.json({
+        success: true,
+        message: 'Valve Test Suite API - Backend Only',
+        frontend: 'https://shobana-7.github.io/valve-test-suite',
+        note: 'This is the backend API. Please visit the frontend URL above.'
+      });
+    }
   });
 } else {
   // Development root endpoint
